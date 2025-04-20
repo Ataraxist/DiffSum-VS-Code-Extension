@@ -23,6 +23,7 @@
     "type": "git",
     "url": "https://github.com/ataraxist/diffsum"
   },
+  "icon": "icon.png",
   "publisher": "ataraxist",
   "keywords": [
     "git",

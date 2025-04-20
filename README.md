@@ -63,3 +63,5 @@ Contributions are welcome. Please open an issue or submit a pull request with im
 ## License
 
 MIT License  
+
+<a href="https://www.flaticon.com/free-icons/generator" title="generator icons">Generator icons created by edt.im - Flaticon</a>
