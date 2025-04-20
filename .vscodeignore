@@ -11,8 +11,6 @@ vsc-extension-quickstart.md
 **/.vscode-test.*
 node_modules/**
 src/**
-.vscode/**
 test/**
-README.md
 tsconfig.json
 *.ts

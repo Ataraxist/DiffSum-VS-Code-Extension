@@ -1,7 +1,7 @@
 {
   "name": "diffsum",
   "displayName": "DiffSum",
-  "description": "OpenAI-powered commit message generator for Git in VS Code.",
+  "description": "AI-powered commit message generator for Git in VS Code.",
   "version": "0.0.2",
   "engines": {
     "vscode": "^1.99.0"
@@ -24,7 +24,7 @@
     "url": "https://github.com/ataraxist/diffsum"
   },
   "icon": "icon.png",
-  "publisher": "ataraxist",
+  "publisher": "Chris Antico & Arthur Jin",
   "keywords": [
     "git",
     "commit",

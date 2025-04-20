@@ -1,14 +1,29 @@
+// Import the VS Code API to access user and workspace configuration settings
 import * as vscode from 'vscode';
 
+// Define and export a function that retrieves user-configured values for DiffSum
 export function getConfig() {
+  // Access the settings namespace for this extension (e.g., "diffsum.apiKey")
   const settings = vscode.workspace.getConfiguration('diffsum');
+
+  // Read the 'verbose' setting (boolean); default to false if undefined
   const verbose = settings.get<boolean>('verbose') ?? false;
+
+  // Read the 'apiKey' setting (string); default to an empty string if undefined
   const apiKey = settings.get<string>('apiKey') ?? '';
 
+  // Return a configuration object containing:
   return {
+    // The OpenAI API key to use for requests
     apiKey,
+
+    // The model to use: GPT-4 if verbose is enabled, GPT-3.5 otherwise
     model: verbose ? 'gpt-4' : 'gpt-3.5-turbo',
+
+    // Token limit for the OpenAI response: larger for verbose mode
     maxTokens: verbose ? 250 : 100,
+
+    // System prompt given to the AI to define its behavior and output style
     systemPrompt: verbose
       ? `You are an AI that writes **detailed Git commit messages** in a structured format.
 
