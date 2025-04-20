@@ -1,0 +1,75 @@
+{
+  "name": "diffsum",
+  "displayName": "DiffSum",
+  "description": "OpenAI-powered commit message generator for Git in VS Code.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onView:scm"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "package": "vsce package"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "ai",
+    "openai",
+    "vscode"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.95.1",
+    "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@vscode/test-electron": "^2.5.2",
+    "typescript": "^5.8.3",
+    "vscode": "^1.1.37"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "diffsum.generateCommit",
+        "title": "DiffSum"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "diffsum.generateCommit",
+          "when": "scmProvider == git",
+          "group": "navigation",
+          "title": "$(git-commit)"
+
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Diffsum",
+      "properties": {
+        "diffsum.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your OpenAI API key used to generate commit messages."
+        },
+        "diffsum.verbose": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable verbose mode (uses GPT-4 and more detailed summaries)."
+        }
+      }
+    }
+  }
+}
